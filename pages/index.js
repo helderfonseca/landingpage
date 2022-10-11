@@ -48,24 +48,31 @@ export default function Home() {
           <header className='px-6 mx-auto max-w-6xl'>
             <div className='flex justify-between items-center py-6'>
               <Image src={'/icon/logo.svg'} width={100} height={20}/>
-              <nav className='flex items-center space-x-10'>
+              <nav className='hidden md:flex md:items-center md:space-x-10'>
                 {menu && menu.map((item, index) => (
                   <a key={index} href='#' className='text-gray-700 hover:text-gray-900'>{item}</a>
                 ))}
                 <a href='#' className='font-semibold text-indigo-600 hover:text-indigo-800'>Try now</a>
               </nav>
+              <button className='p-4 md:hidden'>
+                <Image src={'/icon/menu.svg'} width={24} height={24} className='w-6 h-6 text-gray-800'/>
+              </button>
             </div>
           </header>
 
           <section className='px-6 mx-auto max-w-6xl'>
-            <div className='flex'>
-              <div className='pt-24 pr-8 pb-12 w-1/2'>
-                <h1 className='text-6xl font-bold font-display'>Learn the <span className='relative after:content-[url(/scratch.svg)] after:absolute after:-top-2 after:-right-6'>best</span> ways for staying productive</h1>
-                <p className='pt-8 max-w-md text-xl leading-relaxed'>
+            <div className='flex flex-col-reverse items-center md:flex-row lg:items-end'>
+              <div className='pt-24 pr-8 pb-24 text-center md:pb-12 md:w-1/2 w-full md:text-left'>
+                <h1 className='text-5xl md:text-6xl font-bold font-display'>
+                  Learn the <span className='relative after:content-[url(/scratch.svg)] after:absolute after:-top-2 after:-right-6'>best</span> 
+                  ways for staying
+                  <span className='relative after:content-[url(/decoration.svg)] after:absolute after:-bottom-2 after:right-8'> productive</span>
+                </h1>
+                <p className='pt-8 md:max-w-md md:text-xl leading-relaxed'>
                   Working at home is definitely a convenient 
                   option and makes sense in these unprecedented times.
                 </p>
-                <div className='flex items-center pt-12 space-x-6'>
+                <div className='flex md:justify-start justify-center items-center pt-12 space-x-6'>
                   <button className='py-4 px-8 font-bold tracking-wide leading-7 text-white bg-blue-600 rounded-xl hover:shadow-xl'>Get Tips</button>
                   <button className='flex items-center'>
                     <Image src={'/icon/play-button.svg'} width={50} height={50} className='drop-shadow-lg hover:drop-shadow-xl'/>
@@ -82,14 +89,14 @@ export default function Home() {
 
         <section className='bg-gray-50'>
           <div className='py-12 px-6 mx-auto max-w-6xl'>
-              <div className='flex gap-5'>
+              <div className='flex md:flex-row flex-col gap-5'>
                 {
                   features.map((item, index) => (
                     <div key={index} className='flex flex-col p-8 space-y-4 bg-white rounded-lg border border-gray-300 transition-shadow duration-500 ease-out cursor-pointer hover:shadow-xl'>
                       <div className='flex items-center space-x-3'>
                         <div className='relative'>
                           <span className={item.color + ' absolute top-0 left-4 w-3 h-3 rounded-full opacity-50'} />
-                          {item.icon}
+                            {item.icon}
                         </div>
                         <div className='relative'>
                           <span className={`${item.color} absolute right-0 bottom-1 w-12 h-1.5 opacity-60`} />

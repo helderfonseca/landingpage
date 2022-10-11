@@ -13,7 +13,22 @@ module.exports = {
       colors: {
         gray: {
           50: '#F6FAFD',
+        },
+        orange: {
+          DEFAULT: '#D9AC68',
+        },
+        blue: {
+          DEFAULT: '#3EC1F3',
+        },
+        pink: {
+          DEFAULT: '#F990BC',
         }
+      },
+      /*fontSize: {
+        '6xl': ['3.5rem', '4.25rem']
+      },*/
+      zIndex: {
+        '-1': '-1',
       }
     },
   },
